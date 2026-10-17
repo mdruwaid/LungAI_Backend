@@ -6,4 +6,4 @@ torch
 torchvision
 Pillow
 numpy
-opencv-python-headlessf
+opencv-python-headless
