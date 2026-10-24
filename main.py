@@ -15,9 +15,17 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torchvision import models
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Lung Cancer AI Clinical Decision Support API")
-
+# 2. ADD THIS ENTIRE BLOCK TO UNLOCK BROWSER ACCESS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows your localhost frontend to connect
+    allow_credentials=True,
+    allow_methods=["*"],  
+    allow_headers=["*"],  
+)
 # ==========================================
 # 1. LOAD THE AI MODELS
 # ==========================================
